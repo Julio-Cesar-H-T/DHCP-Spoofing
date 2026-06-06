@@ -4,6 +4,7 @@
 
 Demostrar cómo un atacante puede suplantar al servidor DHCP legítimo respondiendo más rápido a las solicitudes de las víctimas, asignándoles un gateway falso que redirige todo su tráfico a través del atacante (MitM automático) y un servidor DNS controlado.
 
+Link a la lista de reproducción: https://www.youtube.com/playlist?list=PL1bMSHFyMPr7W7DrFd-INmRRQDjGquFIV
 ---
 
 ## 📋 Objetivo del Script
@@ -112,16 +113,6 @@ DHCP OFFER FALSO (Kali):
 | Kali | ens4.10 | subinterfaz VLAN 10 | 192.168.10.50/24 |
 | VPC-1/4 | eth0 | access VLAN 10 | DHCP → .100 o .200 |
 
----
-
-## 📸 Capturas de Pantalla
-
-> Insertar capturas en esta sección:
-
-1. **`img/01_dhcp_legitimo.png`** — VPC-1 con `ip dhcp` antes del ataque. Obtiene IP del pool legítimo (`.100`-`.199`) con gateway `192.168.10.254`.
-2. **`img/02_script_corriendo.png`** — Terminal Kali con el servidor rogue activo mostrando `[OFFER x3]` y `[ACK x3]`.
-3. **`img/03_ip_falsa.png`** — VPC-1 con nueva IP del pool falso (`.200+`) y gateway `192.168.10.50`.
-4. **`img/04_show_dhcp_binding.png`** — `show ip dhcp binding` en R1 mostrando las MACs atendidas por el servidor legítimo vs las del atacante.
 
 ---
 
